@@ -1,7 +1,0 @@
-package ma.patientcovid.room;
-
-public class Hopital {
-	int id_Hopital;
-	String nomHopital;
-	String ville;
-}

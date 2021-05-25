@@ -1,6 +1,0 @@
-package ma.patiencovid.patient;
-
-public class Symptome {
-	int id_Symptome;
-	String descriptionSymptome;
-}

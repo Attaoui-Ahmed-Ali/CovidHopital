@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\thex2\Desktop\Cours\Semestre_2\Java\Projet\Hopital\.metadata\.plugins\org.eclipse.jdt.core
-3883950653.index
-1069333456.index

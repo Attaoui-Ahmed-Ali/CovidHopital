@@ -1,6 +1,0 @@
-package ma.patiencovid.patient;
-
-public class Medicament {
-	int id_Medoc;
-	String descriptionMedoc;
-}

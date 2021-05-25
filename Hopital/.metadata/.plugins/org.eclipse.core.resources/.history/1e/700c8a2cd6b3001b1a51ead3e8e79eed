@@ -1,9 +1,0 @@
-package ma.patientcovid.room;
-
-import java.util.Date;
-
-public class SejourHopitalier {
-	int id_Sejour;
-	Date debutSejour;
-	Date finSejour;
-}
