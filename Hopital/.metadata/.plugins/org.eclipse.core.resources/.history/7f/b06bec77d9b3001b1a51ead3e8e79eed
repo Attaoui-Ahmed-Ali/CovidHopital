@@ -1,0 +1,13 @@
+package ma.patientcovid.user;
+
+public abstract class User {
+	int id_User;
+	String login;
+	String passwd;
+	
+	public int getId() {
+		return this.id_User;
+	}
+	
+}
+

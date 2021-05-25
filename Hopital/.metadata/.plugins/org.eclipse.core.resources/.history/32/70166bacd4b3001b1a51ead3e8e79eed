@@ -1,0 +1,13 @@
+package ma.patiencovid.patient;
+
+import java.util.Date;
+
+public class Patient {
+	int id_Patient;
+	String CIN;
+	Date DateNaissance;
+	String Nom;
+	String Prenom;
+	String Tel;
+	String Adresse;
+}

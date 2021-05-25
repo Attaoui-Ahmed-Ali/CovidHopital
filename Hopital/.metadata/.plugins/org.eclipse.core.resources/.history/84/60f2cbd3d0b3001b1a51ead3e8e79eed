@@ -1,0 +1,5 @@
+package ma.patientcovid.room;
+
+public class Hopital {
+
+}

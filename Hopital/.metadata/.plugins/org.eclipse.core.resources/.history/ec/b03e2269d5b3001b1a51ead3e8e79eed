@@ -1,0 +1,11 @@
+package ma.patiencovid.patient;
+
+import java.util.Date;
+
+public class Diagnostic {
+	int id_Diagnostic;
+	Date date_contamination;
+	Date date_Diagnostic;
+	Date date_cloture;
+	boolean etat_final;
+}

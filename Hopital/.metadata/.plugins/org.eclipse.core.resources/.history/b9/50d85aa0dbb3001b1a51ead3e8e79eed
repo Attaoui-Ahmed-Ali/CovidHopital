@@ -1,0 +1,31 @@
+package ma.patientcovid.room;
+
+public class Room {
+	int id_Room;
+	String type;
+	char etat;
+	
+	public int getId() {
+		return this.id_Room;
+	}
+	
+	public void setId(int id) {
+		this.id_Room = id;
+	}
+	
+	public String getType() {
+		return this.type;
+	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public char getEtat() {
+		return this.etat;
+	}
+	
+	public void setEtat(char etat) {
+		this.etat = etat;
+	}
+}

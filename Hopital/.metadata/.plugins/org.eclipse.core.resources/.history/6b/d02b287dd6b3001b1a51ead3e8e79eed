@@ -1,0 +1,7 @@
+package ma.patientcovid.room;
+
+public class Room {
+	int id_Room;
+	String type;
+	char etat;
+}

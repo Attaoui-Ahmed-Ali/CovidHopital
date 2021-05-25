@@ -1,0 +1,16 @@
+package ma.patientcovid.user;
+
+public class Caregiver extends User {
+
+	public  int getId() {
+		return this.id_User;
+	}
+	
+	public void setId(int id) {
+		this.id_User = id;
+	}
+	public abstract String getLogin();
+	public abstract void setLogin();
+	public abstract String getPwd();
+	public abstract void setPwd();
+}

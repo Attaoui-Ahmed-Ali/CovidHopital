@@ -1,0 +1,5 @@
+package ma.patiencovid.patient;
+
+public class Patient {
+
+}
