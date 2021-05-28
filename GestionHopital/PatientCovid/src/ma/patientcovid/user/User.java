@@ -1,21 +1,45 @@
 package ma.patientcovid.user;
 
-public abstract class User {
+public class User {
 	int id_User;
 	String login;
 	String passwd;
 	
-	public abstract int getId();
+	public User(int id, String login, String pwd) {
+		this.id_User = id;
+		this.login = login;
+		this.passwd = pwd;
+	}
 	
-	public abstract void setId(int id);
+	public User() {
+		this.id_User = -1;	
+		this.login = null;
+		this.passwd = null;
+	}
 	
-	public abstract String getLogin();
+	public  int getId() {
+		return this.id_User;
+	}
 	
-	public abstract void setLogin(String login);
+	public void setId(int id) {
+		this.id_User = id;
+	}
 	
-	public abstract String getPwd();
+	public String getLogin() {
+		return this.login;
+	}
 	
-	public abstract void setPwd(String login);
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	public String getPwd() {
+		return this.passwd;
+	}
+	
+	public void setPwd(String pwd) {
+		this.passwd = pwd;
+	}
 	
 }
 
