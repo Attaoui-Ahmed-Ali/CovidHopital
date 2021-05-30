@@ -48,7 +48,8 @@ CREATE TABLE Patient(
 	Nom varchar(255),
 	Prenom varchar(255),
 	Tel varchar(255),
-	Adresse varchar(255)
+	Adresse varchar(255),
+	Sexe varchar(255)
 	);
 
 CREATE TABLE Diagnostic(
