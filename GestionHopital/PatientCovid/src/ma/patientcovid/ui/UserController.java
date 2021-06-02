@@ -52,11 +52,13 @@ public class UserController {
 	private void addUser() {
 		String username = userNameField.getText();
 		String password = userPasswordField.getText();
+		String permission = userPermissionChoice.getValue().toString();
 	}
 	
 	@FXML
 	private void clearAddUser() {
-		
+		userNameField.clear();
+		userPasswordField.clear();
 	}
 	
 	@FXML
@@ -68,11 +70,14 @@ public class UserController {
 		int id = Integer.parseInt(idtext);
 		String username = userNameField.getText();
 		String password = userPasswordField.getText();
+		String permission = userPermissionChoice.getValue().toString();
 	}
 	
 	@FXML
 	private void clearEditUser() {
-		
+		userIdField.clear();
+		userNameField.clear();
+		userPasswordField.clear();
 	}
 	
 	@FXML

@@ -85,11 +85,16 @@ public class PatientController {
 		String tel = patientTelField.getText();
 		String adresse = patientAdressField.getText();
 		LocalDate DN = patientDNPicker.getValue();
+		String sexe = patientSexeChoice.getValue().toString();
 	}
 	
 	@FXML
 	private void clearAddPatient() {
-		
+		patientCINField.clear();
+		patientNomField.clear();
+		patientPrenomField.clear();
+		patientTelField.clear();
+		patientAdressField.clear();
 	}
 	
 	@FXML
@@ -105,11 +110,17 @@ public class PatientController {
 		String tel = patientTelField.getText();
 		String adresse = patientAdressField.getText();
 		LocalDate DN = patientDNPicker.getValue();
+		String sexe = patientSexeChoice.getValue().toString();
 	}
 	
 	@FXML
 	private void clearEditPatient() {
-		
+		patientIdField.clear();
+		patientCINField.clear();
+		patientNomField.clear();
+		patientPrenomField.clear();
+		patientTelField.clear();
+		patientAdressField.clear();
 	}
 	
 	@FXML

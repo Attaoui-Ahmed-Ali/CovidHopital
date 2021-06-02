@@ -48,7 +48,8 @@ public class HopitalController {
 	
 	@FXML
 	private void clearAddHopital() {
-		
+		hopitalNomField.clear();
+		hopitalVilleField.clear();
 	}
 	
 	@FXML
@@ -65,7 +66,9 @@ public class HopitalController {
 	
 	@FXML
 	private void clearEditHopital() {
-		
+		hopitalIdField.clear();
+		hopitalNomField.clear();
+		hopitalVilleField.clear();
 	}
 	
 	@FXML
