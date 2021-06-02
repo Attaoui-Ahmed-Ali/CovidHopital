@@ -9,13 +9,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../../../../../../Projet/MyWay/MyWayClient/src/ma/myway/client/ui/viewFxml/css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.UserController">
    <children>
-      <Button layoutX="224.0" layoutY="349.0" mnemonicParsing="false" text="Chargement des données" />
-      <TableView layoutX="39.0" layoutY="67.0" prefHeight="259.0" prefWidth="523.0">
+      <Button fx:id="userLoad" layoutX="224.0" layoutY="349.0" mnemonicParsing="false" onAction="#loadUserData" text="Chargement des données" />
+      <TableView fx:id="userTable" layoutX="39.0" layoutY="67.0" prefHeight="259.0" prefWidth="523.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Id" />
-            <TableColumn prefWidth="75.0" text="Username" />
-            <TableColumn prefWidth="75.0" text="Password" />
-            <TableColumn prefWidth="75.0" text="Permission" />
+            <TableColumn fx:id="userId" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="userName" prefWidth="75.0" text="Username" />
+            <TableColumn fx:id="userPassword" prefWidth="75.0" text="Password" />
+            <TableColumn fx:id="userPermission" prefWidth="75.0" text="Permission" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
