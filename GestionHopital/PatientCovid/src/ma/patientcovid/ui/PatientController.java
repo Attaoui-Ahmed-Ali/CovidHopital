@@ -1,5 +1,7 @@
 package ma.patientcovid.ui;
 
+import java.time.LocalDate;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -77,7 +79,12 @@ public class PatientController {
 	
 	@FXML
 	private void addPatient() {
-		
+		String CIN = patientCINField.getText();
+		String nom = patientNomField.getText();
+		String prenom = patientPrenomField.getText();
+		String tel = patientTelField.getText();
+		String adresse = patientAdressField.getText();
+		LocalDate DN = patientDNPicker.getValue();
 	}
 	
 	@FXML
@@ -90,7 +97,14 @@ public class PatientController {
 	
 	@FXML
 	private void editPatient() {
-		
+		String idtext = patientIdField.getText();
+		int id = Integer.parseInt(idtext);
+		String CIN = patientCINField.getText();
+		String nom = patientNomField.getText();
+		String prenom = patientPrenomField.getText();
+		String tel = patientTelField.getText();
+		String adresse = patientAdressField.getText();
+		LocalDate DN = patientDNPicker.getValue();
 	}
 	
 	@FXML
@@ -100,6 +114,7 @@ public class PatientController {
 	
 	@FXML
 	private void deletePatient() {
-		
+		String idtext = patientIdField.getText();
+		int id = Integer.parseInt(idtext);
 	}
 }

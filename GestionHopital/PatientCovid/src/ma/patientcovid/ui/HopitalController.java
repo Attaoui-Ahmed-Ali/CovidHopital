@@ -42,7 +42,8 @@ public class HopitalController {
 	
 	@FXML
 	private void addHopital() {
-		
+		String nom = hopitalNomField.getText();
+		String ville = hopitalVilleField.getText();
 	}
 	
 	@FXML
@@ -55,6 +56,10 @@ public class HopitalController {
 	
 	@FXML
 	private void editHopital() {
+		String idtext = hopitalIdField.getText();
+		int id = Integer.parseInt(idtext);
+		String nom = hopitalNomField.getText();
+		String ville = hopitalVilleField.getText();
 		
 	}
 	
@@ -65,6 +70,7 @@ public class HopitalController {
 	
 	@FXML
 	private void deleteHopital() {
-		
+		String idtext = hopitalIdField.getText();
+		int id = Integer.parseInt(idtext);
 	}
 }

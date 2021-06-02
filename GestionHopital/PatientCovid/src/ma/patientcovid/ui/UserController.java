@@ -50,7 +50,8 @@ public class UserController {
 	
 	@FXML
 	private void addUser() {
-		
+		String username = userNameField.getText();
+		String password = userPasswordField.getText();
 	}
 	
 	@FXML
@@ -63,7 +64,10 @@ public class UserController {
 	
 	@FXML
 	private void editUser() {
-		
+		String idtext = userIdField.getText();
+		int id = Integer.parseInt(idtext);
+		String username = userNameField.getText();
+		String password = userPasswordField.getText();
 	}
 	
 	@FXML
@@ -73,7 +77,8 @@ public class UserController {
 	
 	@FXML
 	private void deleteUser() {
-		
+		String idtext = userIdField.getText();
+		int id = Integer.parseInt(idtext);
 	}
 	
 }
