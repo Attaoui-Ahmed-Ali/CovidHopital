@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="23.0" layoutY="120.0" text="CIN" />
+      <TextField layoutX="122.0" layoutY="116.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="23.0" layoutY="169.0" text="Nom" />
+      <TextField layoutX="122.0" layoutY="165.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="23.0" layoutY="217.0" text="Prénom" />
+      <TextField layoutX="122.0" layoutY="213.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="23.0" layoutY="268.0" text="Date de Naissance" />
+      <Label layoutX="317.0" layoutY="170.0" text="N° de Telephone" />
+      <TextField layoutX="413.0" layoutY="166.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="317.0" layoutY="218.0" text="Adresse" />
+      <TextField layoutX="413.0" layoutY="213.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="317.0" layoutY="268.0" text="Sexe" />
+      <DatePicker layoutX="125.0" layoutY="264.0" />
+      <ChoiceBox layoutX="413.0" layoutY="264.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="251.0" layoutY="48.0" text="Modification Patient" />
+      <Label layoutX="317.0" layoutY="120.0" text="Id Patient" />
+      <TextField layoutX="416.0" layoutY="116.0" prefHeight="25.0" prefWidth="175.0" />
+   </children>
+</Pane>
