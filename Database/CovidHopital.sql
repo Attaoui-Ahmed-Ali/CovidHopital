@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS Hopital;
 
 CREATE TABLE Users(
 	id_User int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	login varchar(255) NOT NULL,
+	username varchar(255) NOT NULL UNIQUE,
 	passwd varchar(255),
 	Permission varchar(255)
 	);
@@ -104,4 +104,7 @@ CREATE TABLE Traitement(
 	FOREIGN KEY (id_Medoc) REFERENCES Medicament(id_Medoc),
 	FOREIGN KEY (id_Posologie) REFERENCES Posologie(id_Posologie)
 	);
+
+INSERT into users(username,passwd,permission) VALUES ("admin","admin","Administrateur");
+INSERT into users(username,passwd,permission) VALUES ("user","user","Soignant");
 

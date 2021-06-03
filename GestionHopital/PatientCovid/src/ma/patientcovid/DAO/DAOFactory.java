@@ -1,5 +1,4 @@
 package ma.patientcovid.DAO;
-
 import java.sql.Connection;
 
 public class DAOFactory {

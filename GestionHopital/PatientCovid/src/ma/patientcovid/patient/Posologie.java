@@ -1,4 +1,4 @@
-package ma.patiencovid.patient;
+package ma.patientcovid.patient;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package ma.patiencovid.patient;
+package ma.patientcovid.patient;
 
 public class Medicament {
 	int id_Medoc; // clé primaire

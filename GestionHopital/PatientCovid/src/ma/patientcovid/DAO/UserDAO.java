@@ -1,5 +1,4 @@
 package ma.patientcovid.DAO;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -68,7 +67,8 @@ public class UserDAO extends DAO<User> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			ResultSet result = stmt.executeQuery("SELECT * FROM Users WHERE id_User  = " + obj.getId());
+			ResultSet result = stmt.executeQuery("SELECT * FROM users WHERE username  = '" + obj.getLogin()+"'");
+			result.next();
 			user = new User(result.getInt(1), result.getString(2), result.getString(3), result.getString(4));
 			result.close();
 		} catch (SQLException e) {

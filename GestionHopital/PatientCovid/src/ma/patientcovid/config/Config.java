@@ -14,8 +14,8 @@ public class Config {
 	public Config() {
 		this.BDD = "mysql";
 		this.IP = "127.0.0.1";
-		this.PRT = "9432";
-		this.BDDNAME = "SchoolManagementSystem";
+		this.PRT = "3306";
+		this.BDDNAME = "covidhopital";
 		this.USR = "root";
 		this.PSWD = "";
 	}

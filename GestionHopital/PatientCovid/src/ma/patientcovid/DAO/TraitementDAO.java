@@ -1,5 +1,4 @@
 package ma.patientcovid.DAO;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +6,7 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import ma.patiencovid.patient.Traitement;
+import ma.patientcovid.patient.Traitement;
 
 public class TraitementDAO extends DAO<Traitement> {
 	public TraitementDAO(Connection conn) {

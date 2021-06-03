@@ -1,13 +1,21 @@
 package ma.patientcovid.ui;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import ma.patientcovid.Main;
+import ma.patientcovid.DAO.DAOFactory;
+import ma.patientcovid.user.User;
 
 public class BaseController {
 
+	Main main = new Main();
 	@FXML
 	Button btnConfirmation;
 
@@ -21,9 +29,21 @@ public class BaseController {
 	PasswordField passwordLoginField;
 
 	@FXML
-	private void loginUser() {
+	private void loginUser() throws Exception{
 		String username = usernameLoginField.getText();
 		String password = passwordLoginField.getText();
+		User user = DAOFactory.getUserDAO().find(new User(username,password));
+		if (user.getPerm() == "Administrateur"){
+			main.showAdminscene();
+			Stage stage = (Stage) btnConfirmation.getScene().getWindow();
+			stage.close();
+			Stage newStage = new Stage();
+			FXMLLoader rootfx = new FXMLLoader(getClass().getResource("AdminBase.fxml"));
+			Parent root = rootfx.load();
+			newStage.setScene(new Scene(root));
+			newStage.setTitle("Admin");
+			newStage.show();
+		}
 	}
 
 	@FXML

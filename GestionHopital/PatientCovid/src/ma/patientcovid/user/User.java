@@ -12,6 +12,11 @@ public class User {
 		this.passwd = pwd;
 		this.permission = perm;
 	}
+	
+	public User(String login, String pwd) {
+		this.login = login;
+		this.passwd = pwd;
+	}
 
 	public User() {
 		this.id_User = -1;
@@ -50,6 +55,10 @@ public class User {
 
 	public void setPerm(String perm) {
 		this.permission = perm;
+	}
+	
+	public String toString() {
+		return(id_User + " " +login + " " + passwd + " " + permission);
 	}
 
 }
