@@ -5,53 +5,53 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.BaseController">
+<BorderPane prefHeight="473.0" prefWidth="952.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.BaseController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
-            <Menu mnemonicParsing="false" text="Users">
+            <Menu fx:id="userMenu" mnemonicParsing="false" text="Users">
                <items>
-                  <MenuItem fx:id="addUser" mnemonicParsing="false" text="Ajouter" />
-                  <MenuItem fx:id="editUser" mnemonicParsing="false" text="Modifier" />
-                  <MenuItem fx:id="deleteUser" mnemonicParsing="false" text="Supprimer" />
-                  <MenuItem fx:id="listUser" mnemonicParsing="false" text="Afficher" />
-                  <MenuItem fx:id="statUser" mnemonicParsing="false" text="Statistique" />
+                  <MenuItem fx:id="addUser" mnemonicParsing="false" onAction="#showAddUser" text="Ajouter" />
+                  <MenuItem fx:id="editUser" mnemonicParsing="false" onAction="#showEditUser" text="Modifier" />
+                  <MenuItem fx:id="deleteUser" mnemonicParsing="false" onAction="#showdeleteUser" text="Supprimer" />
+                  <MenuItem fx:id="listUser" mnemonicParsing="false" onAction="#showListUser" text="Afficher" />
+                  <MenuItem fx:id="statUser" mnemonicParsing="false" onAction="#showStatUser" text="Statistique" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Hopitaux">
                <items>
-                  <MenuItem fx:id="addHopital" mnemonicParsing="false" text="Ajouter" />
-                  <MenuItem fx:id="editHopital" mnemonicParsing="false" text="Modifier" />
-                  <MenuItem fx:id="deleteHopital" mnemonicParsing="false" text="Supprimer" />
-                  <MenuItem fx:id="listHopital" mnemonicParsing="false" text="Afficher" />
-                  <MenuItem fx:id="statHopital" mnemonicParsing="false" text="Statistique" />
+                  <MenuItem fx:id="addHopital" mnemonicParsing="false" onAction="#showAddHopital" text="Ajouter" />
+                  <MenuItem fx:id="editHopital" mnemonicParsing="false" onAction="#showEditHopital" text="Modifier" />
+                  <MenuItem fx:id="deleteHopital" mnemonicParsing="false" onAction="#showDeleteHopital" text="Supprimer" />
+                  <MenuItem fx:id="listHopital" mnemonicParsing="false" onAction="#showListHopital" text="Afficher" />
+                  <MenuItem fx:id="statHopital" mnemonicParsing="false" onAction="#showStatHopital" text="Statistique" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Patients">
                <items>
-                  <MenuItem fx:id="addPatient" mnemonicParsing="false" text="Ajouter" />
-                  <MenuItem fx:id="editPatient" mnemonicParsing="false" text="Modifier" />
-                  <MenuItem fx:id="deletePatient" mnemonicParsing="false" text="Supprimer" />
-                  <MenuItem fx:id="listPatient" mnemonicParsing="false" text="Afficher" />
-                  <MenuItem fx:id="statPatient" mnemonicParsing="false" text="Statistique" />
+                  <MenuItem fx:id="addPatient" mnemonicParsing="false" onAction="#showAddPatient" text="Ajouter" />
+                  <MenuItem fx:id="editPatient" mnemonicParsing="false" onAction="#showEditPatient" text="Modifier" />
+                  <MenuItem fx:id="deletePatient" mnemonicParsing="false" onAction="#showDeletePatient" text="Supprimer" />
+                  <MenuItem fx:id="listPatient" mnemonicParsing="false" onAction="#showListPatient" text="Afficher" />
+                  <MenuItem fx:id="statPatient" mnemonicParsing="false" onAction="#showListPatient" text="Statistique" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Traitements">
                <items>
-                  <MenuItem fx:id="addTraitement" mnemonicParsing="false" text="Ajouter" />
-                  <MenuItem fx:id="editTraitement" mnemonicParsing="false" text="Modifier" />
-                  <MenuItem fx:id="deleteTraitement" mnemonicParsing="false" text="Supprimer" />
-                  <MenuItem fx:id="listTraitement" mnemonicParsing="false" text="Afficher" />
-                  <MenuItem fx:id="statTraitement" mnemonicParsing="false" text="Statistique" />
+                  <MenuItem fx:id="addTraitement" mnemonicParsing="false" onAction="#showAddTraitement" text="Ajouter" />
+                  <MenuItem fx:id="editTraitement" mnemonicParsing="false" onAction="#showEditTraitement" text="Modifier" />
+                  <MenuItem fx:id="deleteTraitement" mnemonicParsing="false" onAction="#showDeleteTraitement" text="Supprimer" />
+                  <MenuItem fx:id="listTraitement" mnemonicParsing="false" onAction="#showListTraitement" text="Afficher" />
+                  <MenuItem fx:id="statTraitement" mnemonicParsing="false" onAction="#showStatTraitement" text="Statistique" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Séjour">
                <items>
-                  <MenuItem fx:id="addSejour" mnemonicParsing="false" text="Ajouter" />
-                  <MenuItem fx:id="editSejour" mnemonicParsing="false" text="Modifier" />
-                  <MenuItem fx:id="deleteSejour" mnemonicParsing="false" text="Supprimer" />
-                  <MenuItem fx:id="listSejour" mnemonicParsing="false" text="Afficher" />
-                  <MenuItem fx:id="statSejour" mnemonicParsing="false" text="Statistique" />
+                  <MenuItem fx:id="addSejour" mnemonicParsing="false" onAction="#showAddSejour" text="Ajouter" />
+                  <MenuItem fx:id="editSejour" mnemonicParsing="false" onAction="#showEditSejour" text="Modifier" />
+                  <MenuItem fx:id="deleteSejour" mnemonicParsing="false" onAction="#showDeleteSejour" text="Supprimer" />
+                  <MenuItem fx:id="listSejour" mnemonicParsing="false" onAction="#showListSejour" text="Afficher" />
+                  <MenuItem fx:id="statSejour" mnemonicParsing="false" onAction="#showStatSejour" text="Statistique" />
                </items>
             </Menu>
          </menus>

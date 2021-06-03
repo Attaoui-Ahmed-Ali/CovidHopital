@@ -21,6 +21,7 @@ public class Main extends Application{
 		FXMLLoader rootfx = new FXMLLoader(getClass().getResource("ui/LoginPage.fxml"));
 		Parent root = rootfx.load();
 		base = rootfx.getController();
+		primary = primaryStage;
 		primaryStage.setTitle("PatientCovid - Attaoui Ahmed Ali");
 		primaryStage.setScene(new Scene(root));
 		primaryStage.setResizable(false);
@@ -33,10 +34,6 @@ public class Main extends Application{
 
 	public static BaseController getControllerdashboard() {
 		return base;
-	}
-
-	public static void showAdminscene() {
-		
 	}
 
 }
