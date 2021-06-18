@@ -22,6 +22,20 @@ public class Patient {
 		this.Adresse = adresse;
 		this.sexe = sexe;
 	}
+	
+	public Patient(String CIN, LocalDate DN, String nom, String prenom, String tel, String adresse, String sexe) {
+		this.CIN = CIN;
+		this.DateNaissance = DN;
+		this.Nom = nom;
+		this.Prenom = prenom;
+		this.Tel = tel;
+		this.Adresse = adresse;
+		this.sexe = sexe;
+	}
+	
+	public Patient(int id) {
+		this.id_Patient = id;
+	}
 
 	public Patient() {
 		this.id_Patient = -1;

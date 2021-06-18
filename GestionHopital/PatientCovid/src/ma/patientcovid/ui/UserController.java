@@ -1,12 +1,17 @@
 package ma.patientcovid.ui;
 
+import java.util.Set;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import ma.patientcovid.DAO.DAOFactory;
+import ma.patientcovid.user.User;
 
 public class UserController {
 
@@ -30,7 +35,12 @@ public class UserController {
 	
 	@FXML
 	private void loadUserData() {
-		
+		Set<User> data = DAOFactory.getUserDAO().all();
+		userId.setCellValueFactory(new PropertyValueFactory("id"));
+		userName.setCellValueFactory(new PropertyValueFactory("login"));
+		userPassword.setCellValueFactory(new PropertyValueFactory("pwd"));
+		userPermission.setCellValueFactory(new PropertyValueFactory("perm"));
+		userTable.getItems().addAll(data);
 	}
 	
 	@FXML
@@ -40,7 +50,10 @@ public class UserController {
 	PasswordField userPasswordField;
 	
 	@FXML
-	ChoiceBox userPermissionChoice;
+	RadioButton Administrateur;
+	
+	@FXML
+	RadioButton Soignant;
 	
 	@FXML
 	Button btnConfirmation;
@@ -52,7 +65,15 @@ public class UserController {
 	private void addUser() {
 		String username = userNameField.getText();
 		String password = userPasswordField.getText();
-		String permission = userPermissionChoice.getValue().toString();
+		String permission = new String();
+		if (Soignant.isSelected()){
+			permission = "Soignant";
+		}
+		else if (Administrateur.isSelected()) {
+			permission = "Administrateur";
+		}
+		User user = new User(username,password,permission);
+		DAOFactory.getUserDAO().create(user);
 	}
 	
 	@FXML
@@ -70,7 +91,15 @@ public class UserController {
 		int id = Integer.parseInt(idtext);
 		String username = userNameField.getText();
 		String password = userPasswordField.getText();
-		String permission = userPermissionChoice.getValue().toString();
+		String permission = new String();
+		if (Soignant.isSelected()){
+			permission = "Soignant";
+		}
+		else if (Administrateur.isSelected()) {
+			permission = "Administrateur";
+		}
+		User user = new User(id,username,password,permission);
+		DAOFactory.getUserDAO().update(user, user);
 	}
 	
 	@FXML
@@ -84,6 +113,8 @@ public class UserController {
 	private void deleteUser() {
 		String idtext = userIdField.getText();
 		int id = Integer.parseInt(idtext);
+		User user = new User(id);
+		DAOFactory.getUserDAO().delete(user);
 	}
 	
 }

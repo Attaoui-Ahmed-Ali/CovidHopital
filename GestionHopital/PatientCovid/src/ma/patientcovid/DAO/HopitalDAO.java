@@ -17,7 +17,7 @@ public class HopitalDAO extends DAO<Hopital> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Hopital VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Hopital(nomHopital,ville) VALUES(" + obj.toStringNoid() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -92,6 +92,7 @@ public class HopitalDAO extends DAO<Hopital> {
 				set_Hopital.add(new Hopital(result.getInt(1), result.getString(2),result.getString(3)));
 			}
 			result.close();
+			System.out.println(set_Hopital);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

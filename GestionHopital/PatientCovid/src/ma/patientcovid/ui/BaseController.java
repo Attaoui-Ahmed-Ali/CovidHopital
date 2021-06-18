@@ -1,5 +1,7 @@
 package ma.patientcovid.ui;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 import ma.patientcovid.Main;
 import ma.patientcovid.DAO.DAOFactory;
 import ma.patientcovid.user.User;
+import ma.patientcovid.ui.UserController;
 
 public class BaseController {
 
@@ -88,6 +91,9 @@ public class BaseController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutUsers.fxml"));
 			Pane newPane = loader.load();
 			primaryLayout.setCenter(newPane);
+			ObservableList<String> permission = FXCollections.observableArrayList("Administrateur","Soignant");
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

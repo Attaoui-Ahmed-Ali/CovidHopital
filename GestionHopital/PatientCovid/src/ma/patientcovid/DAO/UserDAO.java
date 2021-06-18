@@ -17,7 +17,7 @@ public class UserDAO extends DAO<User> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Users VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Users(username,passwd,Permission) VALUES(" + obj.toStringNoid() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -93,6 +93,7 @@ public class UserDAO extends DAO<User> {
 				set_User.add(new User(result.getInt(1), result.getString(2), result.getString(3), result.getString(4)));
 			}
 			result.close();
+			System.out.println(set_User);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

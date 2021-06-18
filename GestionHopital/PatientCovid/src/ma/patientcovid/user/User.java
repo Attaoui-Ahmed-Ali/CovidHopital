@@ -1,36 +1,46 @@
 package ma.patientcovid.user;
 
 public class User {
-	int id_User; // clé primaire
+	int id; // clé primaire
 	String login;
-	String passwd;
-	String permission;
+	String pwd;
+	String perm;
 
 	public User(int id, String login, String pwd, String perm) {
-		this.id_User = id;
+		this.id = id;
 		this.login = login;
-		this.passwd = pwd;
-		this.permission = perm;
+		this.pwd = pwd;
+		this.perm = perm;
+	}
+	
+	public User(String login, String pwd, String perm) {
+		this.login = login;
+		this.pwd = pwd;
+		this.perm = perm;
 	}
 	
 	public User(String login, String pwd) {
 		this.login = login;
-		this.passwd = pwd;
+		this.pwd = pwd;
+	}
+	
+	public User(int id) {
+		this.id = id;
 	}
 
 	public User() {
-		this.id_User = -1;
+		this.id = -1;
 		this.login = null;
-		this.passwd = null;
-		this.permission = null;
+		this.pwd = null;
+		this.perm = null;
 	}
 
 	public int getId() {
-		return this.id_User;
+		return this.id;
 	}
 
 	public void setId(int id) {
-		this.id_User = id;
+		this.id = id;
 	}
 
 	public String getLogin() {
@@ -42,23 +52,27 @@ public class User {
 	}
 
 	public String getPwd() {
-		return this.passwd;
+		return this.pwd;
 	}
 
 	public void setPwd(String pwd) {
-		this.passwd = pwd;
+		this.pwd = pwd;
 	}
 
 	public String getPerm() {
-		return this.permission;
+		return this.perm;
 	}
 
 	public void setPerm(String perm) {
-		this.permission = perm;
+		this.perm = perm;
 	}
 	
 	public String toString() {
-		return(id_User + " " +login + " " + passwd + " " + permission);
+		return(id + ",'" +login + "','" + pwd + "','" + perm + "'");
+	}
+	
+	public String toStringNoid() {
+		return("'" +login + "','" + pwd + "','" + perm + "'");
 	}
 
 }

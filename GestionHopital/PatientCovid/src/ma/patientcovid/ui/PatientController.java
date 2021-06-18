@@ -1,6 +1,7 @@
 package ma.patientcovid.ui;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +10,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import ma.patientcovid.DAO.DAOFactory;
+import ma.patientcovid.patient.Patient;
+import ma.patientcovid.room.Hopital;
 
 public class PatientController {
 
@@ -44,7 +49,17 @@ public class PatientController {
 	
 	@FXML
 	private void loadPatientData() {
-		
+		patientTable.getItems().clear();
+		Set<Patient> data = DAOFactory.getPatientDAO().all();
+		patientId.setCellValueFactory(new PropertyValueFactory("id"));
+		patientCIN.setCellValueFactory(new PropertyValueFactory("nom"));
+		patientNom.setCellValueFactory(new PropertyValueFactory("nomv"));
+		patientPrenom.setCellValueFactory(new PropertyValueFactory("id"));
+		patientSexe.setCellValueFactory(new PropertyValueFactory("nom"));
+		patientDN.setCellValueFactory(new PropertyValueFactory("nomv"));
+		patientTel.setCellValueFactory(new PropertyValueFactory("nom"));
+		patientAdress.setCellValueFactory(new PropertyValueFactory("nomv"));
+		patientTable.getItems().addAll(data);
 	}
 
 	@FXML
@@ -86,6 +101,8 @@ public class PatientController {
 		String adresse = patientAdressField.getText();
 		LocalDate DN = patientDNPicker.getValue();
 		String sexe = patientSexeChoice.getValue().toString();
+		Patient pat = new Patient(CIN,DN,nom,prenom,tel,adresse,sexe);
+		DAOFactory.getPatientDAO().create(pat);
 	}
 	
 	@FXML
@@ -111,6 +128,8 @@ public class PatientController {
 		String adresse = patientAdressField.getText();
 		LocalDate DN = patientDNPicker.getValue();
 		String sexe = patientSexeChoice.getValue().toString();
+		Patient pat = new Patient(id,CIN,DN,nom,prenom,tel,adresse,sexe);
+		DAOFactory.getPatientDAO().update(pat,pat);
 	}
 	
 	@FXML
@@ -127,5 +146,7 @@ public class PatientController {
 	private void deletePatient() {
 		String idtext = patientIdField.getText();
 		int id = Integer.parseInt(idtext);
+		Patient pat = new Patient(id);
+		DAOFactory.getPatientDAO().delete(pat);
 	}
 }
