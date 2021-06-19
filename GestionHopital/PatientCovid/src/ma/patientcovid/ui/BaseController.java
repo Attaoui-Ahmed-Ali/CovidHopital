@@ -646,5 +646,60 @@ public class BaseController {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	private void showAddRoom() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutRoom.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showEditRoom() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifRoom.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private void showDeleteRoom() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppRoom.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showListRoom() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichRoom.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showStatRoom() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("StatRoom.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

@@ -15,11 +15,24 @@ public class Room {
 		this.id_Sejour = idSej;
 	}
 	
+	public Room(int id, String type, String etat, int idHop) {
+		this.id_Room = id;
+		this.type = type;
+		this.etat = etat;
+		this.id_Hopital = idHop;
+	}
+	
 	public Room(String type, String etat, int idSej, int idHop) {
 		this.type = type;
 		this.etat = etat;
 		this.id_Hopital = idHop;
 		this.id_Sejour = idSej;
+	}
+	
+	public Room(String type, String etat, int idHop) {
+		this.type = type;
+		this.etat = etat;
+		this.id_Hopital = idHop;
 	}
 	
 	public Room(int id) {
@@ -72,5 +85,9 @@ public class Room {
 
 	public void setIdHop(int id) {
 		this.id_Hopital = id;
+	}
+	
+	public String toStringNoid() {
+		return("'"+type+"','"+etat+"',"+id_Hopital);
 	}
 }

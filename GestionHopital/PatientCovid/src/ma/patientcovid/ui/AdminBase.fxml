@@ -77,6 +77,15 @@
                   <MenuItem mnemonicParsing="false" onAction="#showListdiag" text="Afficher" />
               </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Room">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#showAddRoom" text="Ajouter" />
+                  <MenuItem mnemonicParsing="false" onAction="#showEditRoom" text="Modifier" />
+                  <MenuItem mnemonicParsing="false" onAction="#showDeleteRoom" text="Supprimer" />
+                  <MenuItem mnemonicParsing="false" onAction="#showListRoom" text="Afficher" />
+                  <MenuItem mnemonicParsing="false" onAction="#showStatRoom" text="Statistique" />
+              </items>
+            </Menu>
          </menus>
       </MenuBar>
    </top>

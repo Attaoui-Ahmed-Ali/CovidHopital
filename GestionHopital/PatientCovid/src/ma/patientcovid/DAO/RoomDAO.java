@@ -17,7 +17,7 @@ public class RoomDAO extends DAO<Room> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Room VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Room(type,etat,id_Hopital) VALUES(" + obj.toStringNoid() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -67,7 +67,7 @@ public class RoomDAO extends DAO<Room> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			ResultSet result = stmt.executeQuery("SELECT * FROM Diagnostic WHERE id_Room  = " + obj.getId());
+			ResultSet result = stmt.executeQuery("SELECT * FROM Room WHERE id_Room  = " + obj.getId());
 			room = new Room(result.getInt(1), result.getString(2),
 					result.getString(3), result.getInt(4), result.getInt(5));
 			result.close();
@@ -88,7 +88,30 @@ public class RoomDAO extends DAO<Room> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			ResultSet result = stmt.executeQuery("SELECT * FROM Diagnostic");
+			ResultSet result = stmt.executeQuery("SELECT * FROM Room");
+			while (result.next()) {
+				set_Room.add(new Room(result.getInt(1), result.getString(2),
+						result.getString(3), result.getInt(4), result.getInt(5)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return set_Room;
+	}
+	
+	public Set<Room> findHop(String idH) {
+		Set<Room> set_Room = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Room where id_Hopital ="+idH);
 			while (result.next()) {
 				set_Room.add(new Room(result.getInt(1), result.getString(2),
 						result.getString(3), result.getInt(4), result.getInt(5)));

@@ -104,4 +104,50 @@ public class HopitalDAO extends DAO<Hopital> {
 		}
 		return set_Hopital;
 	}
+	
+	public Set<String> allVille() {
+		Set<String> set_Ville = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT DISTINCT ville FROM hopital");
+			while (result.next()) {
+				set_Ville.add(result.getString(1));
+			}
+			result.close();
+			System.out.println(set_Ville);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return set_Ville;
+	}
+	
+	public Set<Integer> findVille(String ville) {
+		Set<Integer> set_Ville = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT id_hopital FROM hopital where ville ='"+ville+"'");
+			while (result.next()) {
+				set_Ville.add(result.getInt(1));
+			}
+			result.close();
+			System.out.println(set_Ville);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return set_Ville;
+	}
 }

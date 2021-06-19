@@ -11,6 +11,11 @@ public class Hopital {
 		this.nomv = nomv;
 	}
 	
+	public Hopital(int id,String nomv) {
+		this.id = id;
+		this.nomv = nomv;
+	}
+	
 	public Hopital(String nom, String nomv) {
 		this.nom = nom;
 		this.nomv = nomv;
