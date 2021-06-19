@@ -51,6 +51,25 @@ public class TraitementDAO extends DAO<Traitement> {
 		}
 		return (false);
 	}
+	
+	public boolean deletePos(Traitement obj) {
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			int result = stmt.executeUpdate("DELETE FROM Traitement WHHERE id_Posologie =" + obj.getIdPos());
+			System.out.println(result + " Row affected !");
+			return (true);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return (false);
+	}
 
 	public boolean update(Traitement oldobj, Traitement newobj) {
 		try {

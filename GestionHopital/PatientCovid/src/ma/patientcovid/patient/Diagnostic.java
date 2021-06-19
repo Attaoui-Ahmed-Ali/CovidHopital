@@ -3,77 +3,97 @@ package ma.patientcovid.patient;
 import java.time.LocalDate;
 
 public class Diagnostic {
-	int id_Diagnostic; // clé primaire
-	LocalDate date_contamination;
-	LocalDate date_Diagnostic;
-	LocalDate date_cloture;
-	boolean etat_final; // true si patient survie et guéri sinon false
-	int id_Patient;
+	int iDateDiagiagnostique; // clé primaire
+	LocalDate DateCon;
+	LocalDate DateDiag;
+	LocalDate DateClot;
+	int state; // true si patient survie et guéri sinon false
+	int idPat;
 
-	public Diagnostic(int id, LocalDate cont, LocalDate diag, LocalDate clot, boolean etatf, int idPat) {
-		this.id_Diagnostic = id;
-		this.date_contamination = cont;
-		this.date_Diagnostic = diag;
-		this.date_cloture = clot;
-		this.etat_final = etatf;
-		this.id_Patient = idPat;
+	public Diagnostic(int id, LocalDate cont, LocalDate diag, LocalDate clot, int statef, int idPatat) {
+		this.iDateDiagiagnostique = id;
+		this.DateCon = cont;
+		this.DateDiag = diag;
+		this.DateClot = clot;
+		this.state = statef;
+		this.idPat = idPatat;
+	}
+	
+	public Diagnostic(int id) {
+		this.iDateDiagiagnostique = id;
+	}
+	
+	public Diagnostic(LocalDate cont, LocalDate diag, LocalDate clot, int statef, int idPatat) {
+		this.DateCon = cont;
+		this.DateDiag = diag;
+		this.DateClot = clot;
+		this.state = statef;
+		this.idPat = idPatat;
 	}
 
 	public Diagnostic() {
-		this.id_Diagnostic = -1;
-		this.date_contamination = null;
-		this.date_Diagnostic = null;
-		this.date_cloture = null;
-		this.etat_final = true;
-		this.id_Patient = -1;
+		this.iDateDiagiagnostique = -1;
+		this.DateCon = null;
+		this.DateDiag = null;
+		this.DateClot = null;
+		this.state = 1;
+		this.idPat = -1;
 	}
 
 	public int getId() {
-		return this.id_Diagnostic;
+		return this.iDateDiagiagnostique;
 	}
 
 	public void setId(int id) {
-		this.id_Diagnostic = id;
+		this.iDateDiagiagnostique = id;
 	}
 
 	public LocalDate getCont() {
-		return this.date_contamination;
+		return this.DateCon;
 	}
 
 	public void setCont(LocalDate cont) {
-		this.date_contamination = cont;
+		this.DateCon = cont;
 	}
 
 	public LocalDate getDiag() {
-		return this.date_Diagnostic;
+		return this.DateDiag;
 	}
 
 	public void setDiag(LocalDate diag) {
-		this.date_Diagnostic = diag;
+		this.DateDiag = diag;
 	}
 
 	public LocalDate getClot() {
-		return this.date_cloture;
+		return this.DateClot;
 	}
 
 	public void setClot(LocalDate clot) {
-		this.date_cloture = clot;
+		this.DateClot = clot;
 	}
 
-	public boolean getEtatF() {
-		return this.etat_final;
+	public int getstateF() {
+		return this.state;
 	}
 
-	public void setEtatF(boolean etat) {
-		this.etat_final = etat;
+	public void setstateF(int state) {
+		this.state = state;
 	}
 
-	public int getIdPat() {
-		return this.id_Patient;
+	public int getidPatat() {
+		return this.idPat;
 	}
 
-	public void setIdPat(int id) {
-		this.id_Patient = id;
+	public void setidPatat(int id) {
+		this.idPat = id;
+	}
+	
+	public String toString() {
+		return(iDateDiagiagnostique+",'"+DateCon+"','"+DateDiag+"','"+DateClot+"',"+state+","+idPat);
+	}
+	
+	public String toStringNoid() {
+		return("'"+DateCon+"','"+DateDiag+"','"+DateClot+"',"+state+","+idPat);
 	}
 
 }

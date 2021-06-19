@@ -5,15 +5,14 @@ import java.util.Set;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ma.patientcovid.DAO.DAOFactory;
 import ma.patientcovid.patient.Patient;
-import ma.patientcovid.room.Hopital;
 
 public class PatientController {
 
@@ -75,7 +74,10 @@ public class PatientController {
 	TextField patientPrenomField;
 	
 	@FXML
-	ChoiceBox patientSexeChoice;
+	RadioButton Homme;
+	
+	@FXML
+	RadioButton Femme;
 	
 	@FXML
 	DatePicker patientDNPicker;
@@ -100,7 +102,13 @@ public class PatientController {
 		String tel = patientTelField.getText();
 		String adresse = patientAdressField.getText();
 		LocalDate DN = patientDNPicker.getValue();
-		String sexe = patientSexeChoice.getValue().toString();
+		String sexe = new String();
+		if (Homme.isSelected()) {
+			sexe="H";
+		}
+		else if(Femme.isSelected()) {
+			sexe="F";
+		}
 		Patient pat = new Patient(CIN,DN,nom,prenom,tel,adresse,sexe);
 		DAOFactory.getPatientDAO().create(pat);
 	}
@@ -115,9 +123,6 @@ public class PatientController {
 	}
 	
 	@FXML
-	TextField patiendIdField;
-	
-	@FXML
 	private void editPatient() {
 		String idtext = patientIdField.getText();
 		int id = Integer.parseInt(idtext);
@@ -127,7 +132,13 @@ public class PatientController {
 		String tel = patientTelField.getText();
 		String adresse = patientAdressField.getText();
 		LocalDate DN = patientDNPicker.getValue();
-		String sexe = patientSexeChoice.getValue().toString();
+		String sexe = new String();
+		if (Homme.isSelected()) {
+			sexe="H";
+		}
+		else if(Femme.isSelected()) {
+			sexe="F";
+		}
 		Patient pat = new Patient(id,CIN,DN,nom,prenom,tel,adresse,sexe);
 		DAOFactory.getPatientDAO().update(pat,pat);
 	}

@@ -434,5 +434,217 @@ public class BaseController {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	MenuItem ajoutSympt;
+	
+	@FXML
+	MenuItem modifSympt;
+	
+	@FXML
+	MenuItem suppSympt;
+	
+	@FXML
+	MenuItem affichSympt;
+	
+	@FXML
+	private void showAddSympt() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutSympt.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showEditSympt() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifSympt.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showDeleteSympt() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppSympt.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showListSympt() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichSympt.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	MenuItem ajoutMedoc;
+	
+	@FXML
+	MenuItem modifMedoc;
+	
+	@FXML
+	MenuItem suppMedoc;
+	
+	@FXML
+	MenuItem affichMedoc;
+	
+	@FXML
+	private void showAddMedoc() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutMedoc.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showEditMedoc() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifMedoc.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showDeleteMedoc() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppMedoc.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showListMedoc() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichMedoc.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	MenuItem ajoutDiag;
+	
+	@FXML
+	MenuItem modifDiag;
+	
+	@FXML
+	MenuItem suppDiag;
+	
+	@FXML
+	MenuItem affichDiag;
+	
+	@FXML
+	private void showAddDiag() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutDiagnostique.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showEditDiag() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifDiagnostique.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private void showDeletediag() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppDiagnostique.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showListdiag() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichDiagnostique.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showAddPos() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutPosologie.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showEditPos() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifPosologie.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private void showDeletePos() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppPosologie.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showListPos() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichPosologie.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

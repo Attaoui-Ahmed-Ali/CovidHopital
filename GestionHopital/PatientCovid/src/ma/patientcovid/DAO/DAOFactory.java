@@ -40,6 +40,10 @@ public class DAOFactory {
 		return new TraitementDAO(conn);
 	}
 	
+	public static MedicamentDAO getMedicamentDAO() {
+		return new MedicamentDAO(conn);
+	}
+	
 	public static UserDAO getUserDAO() {
 		return new UserDAO(conn);
 	}

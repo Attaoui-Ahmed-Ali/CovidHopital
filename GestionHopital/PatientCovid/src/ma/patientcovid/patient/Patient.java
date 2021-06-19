@@ -3,9 +3,9 @@ package ma.patientcovid.patient;
 import java.time.LocalDate;
 
 public class Patient {
-	int id_Patient; // clé primaire
+	int id; // clé primaire
 	String CIN;
-	LocalDate DateNaissance;
+	LocalDate DN;
 	String Nom;
 	String Prenom;
 	String Tel;
@@ -13,9 +13,9 @@ public class Patient {
 	String sexe; // prend F ou M
 
 	public Patient(int id, String CIN, LocalDate DN, String nom, String prenom, String tel, String adresse, String sexe) {
-		this.id_Patient = id;
+		this.id = id;
 		this.CIN = CIN;
-		this.DateNaissance = DN;
+		this.DN = DN;
 		this.Nom = nom;
 		this.Prenom = prenom;
 		this.Tel = tel;
@@ -25,7 +25,7 @@ public class Patient {
 	
 	public Patient(String CIN, LocalDate DN, String nom, String prenom, String tel, String adresse, String sexe) {
 		this.CIN = CIN;
-		this.DateNaissance = DN;
+		this.DN = DN;
 		this.Nom = nom;
 		this.Prenom = prenom;
 		this.Tel = tel;
@@ -34,13 +34,13 @@ public class Patient {
 	}
 	
 	public Patient(int id) {
-		this.id_Patient = id;
+		this.id = id;
 	}
 
 	public Patient() {
-		this.id_Patient = -1;
+		this.id = -1;
 		this.CIN = null;
-		this.DateNaissance = null;
+		this.DN = null;
 		this.Nom = null;
 		this.Prenom = null;
 		this.Tel = null;
@@ -49,11 +49,11 @@ public class Patient {
 	}
 
 	public int getId() {
-		return this.id_Patient;
+		return this.id;
 	}
 
 	public void setId(int id) {
-		this.id_Patient = id;
+		this.id = id;
 	}
 
 	public String getCIN() {
@@ -65,11 +65,11 @@ public class Patient {
 	}
 
 	public LocalDate getDN() {
-		return this.DateNaissance;
+		return this.DN;
 	}
 
 	public void setDN(LocalDate DN) {
-		this.DateNaissance = DN;
+		this.DN = DN;
 	}
 
 	public String getNom() {
@@ -110,6 +110,14 @@ public class Patient {
 
 	public void setSexe(String sexe) {
 		this.sexe = sexe;
+	}
+	
+	public String toString() {
+		return(id+"'"+CIN+"','"+DN+"','"+Nom+"','"+Prenom+"','"+Tel+"','"+Adresse+"','"+sexe+"'");
+	}
+	
+	public String toStringNoid() {
+		return("'"+CIN+"','"+DN+"','"+Nom+"','"+Prenom+"','"+Tel+"','"+Adresse+"','"+sexe+"'");
 	}
 
 }

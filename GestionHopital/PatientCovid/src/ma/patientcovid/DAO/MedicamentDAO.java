@@ -17,7 +17,7 @@ public class MedicamentDAO extends DAO<Medicament> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Medicament VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Medicament(descriptionMedoc) VALUES(" + obj.toStringNoid() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -68,6 +68,7 @@ public class MedicamentDAO extends DAO<Medicament> {
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			ResultSet result = stmt.executeQuery("SELECT * FROM Medicament WHERE id_Medoc  = " + obj.getId());
+			result.next();
 			medoc = new Medicament(result.getInt(1), result.getString(2));
 			result.close();
 		} catch (SQLException e) {

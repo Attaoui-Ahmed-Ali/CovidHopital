@@ -14,6 +14,17 @@ public class Room {
 		this.id_Hopital = idHop;
 		this.id_Sejour = idSej;
 	}
+	
+	public Room(String type, String etat, int idSej, int idHop) {
+		this.type = type;
+		this.etat = etat;
+		this.id_Hopital = idHop;
+		this.id_Sejour = idSej;
+	}
+	
+	public Room(int id) {
+		this.id_Room = id;
+	}
 
 	public Room() {
 		this.id_Room = -1;

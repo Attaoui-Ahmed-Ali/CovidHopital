@@ -14,6 +14,10 @@ public class Traitement {
 		this.id_Medoc = idMed;
 		this.id_Posologie = idPos;
 	}
+	
+	public Traitement(int idPos) {
+		this.id_Posologie = idPos;
+	}
 
 	public int getIdMed() {
 		return this.id_Medoc;
@@ -29,5 +33,9 @@ public class Traitement {
 
 	public void setIdPos(int id) {
 		this.id_Posologie = id;
+	}
+	
+	public String toString() {
+		return(id_Medoc+","+id_Posologie);
 	}
 }

@@ -17,7 +17,7 @@ public class PatientDAO extends DAO<Patient> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Patient VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Patient(CIN,DateNaissance,Nom,Prenom,Tel,Adresse,Sexe) VALUES(" + obj.toStringNoid() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {

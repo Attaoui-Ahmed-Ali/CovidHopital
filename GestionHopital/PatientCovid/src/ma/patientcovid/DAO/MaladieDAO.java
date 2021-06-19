@@ -37,8 +37,7 @@ public class MaladieDAO extends DAO<Maladie> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("DELETE FROM Maladie WHERE id_Diagnostic  = " + obj.getIdDiag()
-					+ " and id_Symptome = " + obj.getIdSymp());
+			int result = stmt.executeUpdate("DELETE FROM Maladie WHERE id_Diagnostic  = " + obj.getIdDiag());
 			System.out.println(result + " Row affected !");
 			return (true);
 		} catch (SQLException e) {

@@ -1,32 +1,48 @@
 package ma.patientcovid.patient;
 
 public class Symptome {
-	int id_Symptome; // clé primaire
-	String descriptionSymptome;
+	int id; // clé primaire
+	String desc;
 
 	public Symptome(int id, String desc) {
-		this.id_Symptome = id;
-		this.descriptionSymptome = desc;
+		this.id = id;
+		this.desc = desc;
+	}
+	
+	public Symptome(String desc) {
+		this.desc = desc;
 	}
 
+	public Symptome(int id) {
+		this.id = id;
+	}
+	
 	public Symptome() {
-		this.id_Symptome = -1;
-		this.descriptionSymptome = null;
+		this.id = -1;
+		this.desc = null;
 	}
 
 	public int getId() {
-		return this.id_Symptome;
+		return this.id;
 	}
 
 	public void setId(int id) {
-		this.id_Symptome = id;
+		this.id = id;
 	}
 
 	public String getDesc() {
-		return this.descriptionSymptome;
+		return this.desc;
 	}
 
 	public void setDesc(String desc) {
-		this.descriptionSymptome = desc;
+		this.desc = desc;
+	}
+	
+	public String toString() {
+		return(id+",'"+desc+"'");
+	}
+	
+	public String toStringNoid() {
+		return("'"+desc+"'");
 	}
 }

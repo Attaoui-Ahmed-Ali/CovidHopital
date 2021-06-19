@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import ma.patientcovid.patient.Posologie;
+import ma.patientcovid.patient.Traitement;
 
 public class PosologieDAO extends DAO<Posologie> {
 	public PosologieDAO(Connection conn) {
@@ -14,6 +15,25 @@ public class PosologieDAO extends DAO<Posologie> {
 	}
 
 	public boolean create(Posologie obj) {
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			int result = stmt.executeUpdate("INSERT INTO Posologie(date_debut,date_fin,nb_prise_jour,id_Diagnostic) VALUES(" + obj.toStringNoid() + ")");
+			System.out.println(result + " Row affected ! ");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
+	public boolean createId(Posologie obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
@@ -53,8 +73,10 @@ public class PosologieDAO extends DAO<Posologie> {
 
 	public boolean update(Posologie oldobj, Posologie newobj) {
 		try {
+			Traitement t = new Traitement(oldobj.getId());
+			DAOFactory.getTraitementDAO().deletePos(t);
 			delete(oldobj);
-			create(newobj);
+			createId(newobj);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -67,7 +89,7 @@ public class PosologieDAO extends DAO<Posologie> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			ResultSet result = stmt.executeQuery("SELECT * FROM Posologie WHERE id_Posologie  = " + obj.getId());
+			ResultSet result = stmt.executeQuery("SELECT * FROM Posologie WHERE date_debut  = '" + obj.getDebut()+"' and date_fin = '"+obj.getFin()+"' and nb_prise_jour = "+obj.getPrise()+" and id_Diagnostic ="+obj.getIdDiag());
 			pos = new Posologie(result.getInt(1), result.getDate(2).toLocalDate(),
 					result.getDate(3).toLocalDate(), result.getInt(4), result.getInt(5));
 			result.close();

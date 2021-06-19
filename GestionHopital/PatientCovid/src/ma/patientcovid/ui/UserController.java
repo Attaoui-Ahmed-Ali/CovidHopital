@@ -35,6 +35,7 @@ public class UserController {
 	
 	@FXML
 	private void loadUserData() {
+		userTable.getItems().clear();
 		Set<User> data = DAOFactory.getUserDAO().all();
 		userId.setCellValueFactory(new PropertyValueFactory("id"));
 		userName.setCellValueFactory(new PropertyValueFactory("login"));

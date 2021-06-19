@@ -36,13 +36,12 @@
                   <MenuItem fx:id="statPatient" mnemonicParsing="false" onAction="#showListPatient" text="Statistique" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Traitements">
+            <Menu mnemonicParsing="false" text="Posologie">
                <items>
-                  <MenuItem fx:id="addTraitement" mnemonicParsing="false" onAction="#showAddTraitement" text="Ajouter" />
-                  <MenuItem fx:id="editTraitement" mnemonicParsing="false" onAction="#showEditTraitement" text="Modifier" />
-                  <MenuItem fx:id="deleteTraitement" mnemonicParsing="false" onAction="#showDeleteTraitement" text="Supprimer" />
-                  <MenuItem fx:id="listTraitement" mnemonicParsing="false" onAction="#showListTraitement" text="Afficher" />
-                  <MenuItem fx:id="statTraitement" mnemonicParsing="false" onAction="#showStatTraitement" text="Statistique" />
+                  <MenuItem fx:id="addTraitement" mnemonicParsing="false" onAction="#showAddPos" text="Ajouter" />
+                  <MenuItem fx:id="editTraitement" mnemonicParsing="false" onAction="#showEditPos" text="Modifier" />
+                  <MenuItem fx:id="deleteTraitement" mnemonicParsing="false" onAction="#showDeletePos" text="Supprimer" />
+                  <MenuItem fx:id="listTraitement" mnemonicParsing="false" onAction="#showListPos" text="Afficher" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Séjour">
@@ -53,6 +52,30 @@
                   <MenuItem fx:id="listSejour" mnemonicParsing="false" onAction="#showListSejour" text="Afficher" />
                   <MenuItem fx:id="statSejour" mnemonicParsing="false" onAction="#showStatSejour" text="Statistique" />
                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Symptome">
+              <items>
+                <MenuItem fx:id="ajoutSympt" mnemonicParsing="false" onAction="#showAddSympt" text="Ajouter" />
+                  <MenuItem fx:id="modifSympt" mnemonicParsing="false" onAction="#showEditSympt" text="Modifier" />
+                  <MenuItem fx:id="suppSympt" mnemonicParsing="false" onAction="#showDeleteSympt" text="Supprimer" />
+                  <MenuItem fx:id="affichSympt" mnemonicParsing="false" onAction="#showListSympt" text="Afficher" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Médicament">
+              <items>
+                <MenuItem fx:id="ajoutMedoc" mnemonicParsing="false" onAction="#showAddMedoc" text="Ajouter" />
+                  <MenuItem fx:id="modifMedoc" mnemonicParsing="false" onAction="#showEditMedoc" text="Modifier" />
+                  <MenuItem fx:id="suppMedoc" mnemonicParsing="false" onAction="#showDeleteMedoc" text="Supprimer" />
+                  <MenuItem fx:id="affichMedoc" mnemonicParsing="false" onAction="#showListMedoc" text="Afficher" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Diagnostique">
+              <items>
+                <MenuItem fx:id="ajoutDiag" mnemonicParsing="false" onAction="#showAddDiag" text="Ajouter" />
+                  <MenuItem fx:id="modifDiag" mnemonicParsing="false" onAction="#showEditDiag" text="Modifier" />
+                  <MenuItem fx:id="suppDiag" mnemonicParsing="false" onAction="#showDeletediag" text="Supprimer" />
+                  <MenuItem mnemonicParsing="false" onAction="#showListdiag" text="Afficher" />
+              </items>
             </Menu>
          </menus>
       </MenuBar>

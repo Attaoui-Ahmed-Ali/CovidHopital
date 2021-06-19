@@ -9,7 +9,7 @@
    <children>
       <Label layoutX="169.0" layoutY="30.0" text="Suppression Patient" />
       <Label layoutX="126.0" layoutY="95.0" text="Id Patient" />
-      <TextField fx:id="patiendIdField" layoutX="222.0" layoutY="91.0" />
+      <TextField fx:id="patientIdField" layoutX="222.0" layoutY="91.0" />
       <Button fx:id="btnConfirmation" layoutX="179.0" layoutY="130.0" mnemonicParsing="false" onAction="#deletePatient" text="Confirmation" />
    </children>
 </Pane>

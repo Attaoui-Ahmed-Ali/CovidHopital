@@ -1,34 +1,41 @@
 package ma.patientcovid.patient;
 
 public class Maladie {
-	int id_Symptome;
-	int id_Diagnostic;
+	int idS;
+	int idD;
 	// Les deux id sont clé primaire
 
 	public Maladie() {
-		this.id_Symptome = -1;
-		this.id_Diagnostic = -1;
+		this.idS = -1;
+		this.idD = -1;
 	}
 
 	public Maladie(int idSymp, int idDiag) {
-		this.id_Symptome = idSymp;
-		this.id_Symptome = idDiag;
+		this.idS = idSymp;
+		this.idD = idDiag;
+	}
+	
+	public Maladie(int idDiag) {
+		this.idD = idDiag;
 	}
 
 	public int getIdSymp() {
-		return this.id_Symptome;
+		return this.idS;
 	}
 
 	public void setIdSymp(int id) {
-		this.id_Symptome = id;
+		this.idS = id;
 	}
 
 	public int getIdDiag() {
-		return this.id_Diagnostic;
+		return this.idD;
 	}
 
 	public void setIdDiag(int id) {
-		this.id_Diagnostic = id;
+		this.idD = id;
 	}
-
+	
+	public String toString() {
+		return(idS+","+idD);
+	}
 }
