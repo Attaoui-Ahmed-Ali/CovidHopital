@@ -6,9 +6,9 @@
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.StatRoomController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.StatDiagController">
    <children>
-      <PieChart fx:id="etatPieChart" layoutX="50.0" layoutY="49.0" prefHeight="315.0" prefWidth="380.0" title="Répartition des Chambres" />
+      <PieChart fx:id="etatPieChart" layoutX="50.0" layoutY="49.0" prefHeight="315.0" prefWidth="380.0" title="Répartition des état" />
       <BarChart fx:id="etatBarChart" layoutX="439.0" layoutY="35.0" prefHeight="332.0" prefWidth="380.0">
          <xAxis>
             <CategoryAxis fx:id="X" side="BOTTOM" />

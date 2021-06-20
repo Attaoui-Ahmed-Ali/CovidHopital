@@ -169,4 +169,25 @@ public class HopitalDAO extends DAO<Hopital> {
 		}
 		return set_Ville;
 	}
+	
+	public int countVille(String ville) {
+		int counter = 0;
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT count(*) FROM Hopital WHERE ville  = '" + ville+"'");
+			result.next();
+			counter = result.getInt(1);
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return counter;
+	}
 }

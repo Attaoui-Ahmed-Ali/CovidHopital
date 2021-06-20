@@ -123,4 +123,26 @@ public class MedicamentDAO extends DAO<Medicament> {
 		}
 		return set_Medicament;
 	}
+	
+	public Set<String> allid() {
+		Set<String> set_Medicament = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT id_Medoc FROM Medicament");
+			while (result.next()) {
+				set_Medicament.add(String.valueOf(result.getInt(1)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return set_Medicament;
+	}
 }

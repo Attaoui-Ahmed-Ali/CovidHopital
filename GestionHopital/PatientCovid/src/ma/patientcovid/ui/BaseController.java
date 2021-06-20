@@ -64,7 +64,7 @@ public class BaseController {
 			try {
 				primary = (Stage) btnConfirmation.getScene().getWindow();
 				primary.close();
-				FXMLLoader rootfx = new FXMLLoader(getClass().getResource("AdminBase.fxml"));
+				FXMLLoader rootfx = new FXMLLoader(getClass().getResource("SoignantBase.fxml"));
 				primaryLayout = rootfx.load();
 				primary.setScene(new Scene(primaryLayout));
 				primary.setTitle("Soignant");
@@ -310,20 +310,6 @@ public class BaseController {
 	}
 	
 	@FXML
-	MenuItem editTraitement;
-	
-	@FXML
-	private void showEditTraitement() {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifTraitement.fxml"));
-			Pane newPane = loader.load();
-			primaryLayout.setCenter(newPane);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@FXML
 	MenuItem listTraitement;
 	
 	@FXML
@@ -344,20 +330,6 @@ public class BaseController {
 	private void showDeleteTraitement() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppTraitement.fxml"));
-			Pane newPane = loader.load();
-			primaryLayout.setCenter(newPane);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@FXML
-	MenuItem statTraitement;
-	
-	@FXML
-	private void showStatTraitement() {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("StatTraitement.fxml"));
 			Pane newPane = loader.load();
 			primaryLayout.setCenter(newPane);
 		} catch (Exception e) {
@@ -604,6 +576,17 @@ public class BaseController {
 	}
 	
 	@FXML
+	private void showStatdiag() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("StatDiag.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
 	private void showAddPos() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("AjoutPosologie.fxml"));
@@ -712,5 +695,7 @@ public class BaseController {
 			e.printStackTrace();
 		}
 	}
+
+	
 
 }

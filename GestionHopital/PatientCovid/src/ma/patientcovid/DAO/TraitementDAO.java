@@ -56,7 +56,7 @@ public class TraitementDAO extends DAO<Traitement> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("DELETE FROM Traitement WHHERE id_Posologie =" + obj.getIdPos());
+			int result = stmt.executeUpdate("DELETE FROM Traitement WHERE id_Posologie =" + obj.getIdPos());
 			System.out.println(result + " Row affected !");
 			return (true);
 		} catch (SQLException e) {

@@ -124,4 +124,25 @@ public class UserDAO extends DAO<User> {
 		}
 		return set_User;
 	}
+	
+	public int countPerm(String perm) {
+		int counter = 0;
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT count(*) FROM users WHERE Permission  = '" +perm+"'");
+			result.next();
+			counter = result.getInt(1);
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return counter;
+	}
 }

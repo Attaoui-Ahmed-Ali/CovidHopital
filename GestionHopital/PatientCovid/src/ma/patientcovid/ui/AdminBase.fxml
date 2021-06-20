@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="473.0" prefWidth="952.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.BaseController">
+<BorderPane prefHeight="473.0" prefWidth="885.0" stylesheets="@/C:/Users/thex2/Desktop/Cours/Semestre_2/Java/Projet/test/chillaid/layout/styles/layout.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.BaseController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
@@ -33,7 +33,7 @@
                   <MenuItem fx:id="editPatient" mnemonicParsing="false" onAction="#showEditPatient" text="Modifier" />
                   <MenuItem fx:id="deletePatient" mnemonicParsing="false" onAction="#showDeletePatient" text="Supprimer" />
                   <MenuItem fx:id="listPatient" mnemonicParsing="false" onAction="#showListPatient" text="Afficher" />
-                  <MenuItem fx:id="statPatient" mnemonicParsing="false" onAction="#showListPatient" text="Statistique" />
+                  <MenuItem fx:id="statPatient" mnemonicParsing="false" onAction="#showStatPatient" text="Statistique" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Posologie">
@@ -50,7 +50,6 @@
                   <MenuItem fx:id="editSejour" mnemonicParsing="false" onAction="#showEditSejour" text="Modifier" />
                   <MenuItem fx:id="deleteSejour" mnemonicParsing="false" onAction="#showDeleteSejour" text="Supprimer" />
                   <MenuItem fx:id="listSejour" mnemonicParsing="false" onAction="#showListSejour" text="Afficher" />
-                  <MenuItem fx:id="statSejour" mnemonicParsing="false" onAction="#showStatSejour" text="Statistique" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Symptome">
@@ -75,6 +74,7 @@
                   <MenuItem fx:id="modifDiag" mnemonicParsing="false" onAction="#showEditDiag" text="Modifier" />
                   <MenuItem fx:id="suppDiag" mnemonicParsing="false" onAction="#showDeletediag" text="Supprimer" />
                   <MenuItem mnemonicParsing="false" onAction="#showListdiag" text="Afficher" />
+                  <MenuItem mnemonicParsing="false" onAction="#showStatdiag" text="Statistique" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Room">
@@ -88,7 +88,14 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Maladie">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#showListMaladie" text="Affichage" />
+                <MenuItem mnemonicParsing="false" onAction="#showListMaladie" text="Afficher" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Traitement">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#showAddTraitement" text="Ajouter" />
+                  <MenuItem mnemonicParsing="false" onAction="#showDeleteTraitement" text="Supprimer" />
+                  <MenuItem mnemonicParsing="false" onAction="#showListTraitement" text="Afficher" />
               </items>
             </Menu>
          </menus>

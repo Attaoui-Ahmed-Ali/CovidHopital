@@ -181,4 +181,25 @@ public class RoomDAO extends DAO<Room> {
 		}
 		return set_Room;
 	}
+	
+	public int countEtat(String et) {
+		int counter = 0;
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT count(*) FROM Room WHERE etat  = '" +et+"'");
+			result.next();
+			counter=result.getInt(1);
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return counter;
+	}
 }

@@ -127,4 +127,26 @@ public class PosologieDAO extends DAO<Posologie> {
 		}
 		return set_Posologie;
 	}
+	
+	public Set<String> allid() {
+		Set<String> set_Posologie = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT id_Posologie FROM Posologie");
+			while (result.next()) {
+				set_Posologie.add(String.valueOf(result.getInt(1)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return set_Posologie;
+	}
 }

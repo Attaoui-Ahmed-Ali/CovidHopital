@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.patientcovid.ui.StatUserController">
+   <children>
+      <PieChart fx:id="permPieChart" layoutX="50.0" layoutY="49.0" prefHeight="315.0" prefWidth="380.0" title="Répartition des Permissions" />
+      <BarChart fx:id="permBarChart" layoutX="439.0" layoutY="35.0" prefHeight="332.0" prefWidth="380.0">
+         <xAxis>
+            <CategoryAxis fx:id="X" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="Y" side="LEFT" />
+         </yAxis>
+      </BarChart>
+   </children>
 </Pane>
-
