@@ -2,6 +2,8 @@ package ma.patientcovid.ui;
 
 import java.util.Set;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -15,16 +17,16 @@ import ma.patientcovid.user.User;
 public class HopitalController {
 
 	@FXML
-	TableView hopitalTable;
+	TableView<Hopital> hopitalTable;
 
 	@FXML
-	TableColumn hopitalId;
+	TableColumn<Hopital,Integer> hopitalId;
 
 	@FXML
-	TableColumn hopitalNom;
+	TableColumn<Hopital,String>  hopitalNom;
 
 	@FXML
-	TableColumn hopitalVille;
+	TableColumn<Hopital,String>  hopitalVille;
 
 	@FXML
 	Button hoptialLoad;
@@ -33,9 +35,12 @@ public class HopitalController {
 	private void loadHopitalData() {
 		hopitalTable.getItems().clear();
 		Set<Hopital> data = DAOFactory.getHopitalDAO().all();
-		hopitalId.setCellValueFactory(new PropertyValueFactory("id"));
-		hopitalNom.setCellValueFactory(new PropertyValueFactory("nom"));
-		hopitalVille.setCellValueFactory(new PropertyValueFactory("nomv"));
+		hopitalId.setCellValueFactory(
+				cellData -> new SimpleIntegerProperty(cellData.getValue().getId()).asObject());
+		hopitalNom.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNom()));
+		hopitalVille.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getnomv()));
 		hopitalTable.getItems().addAll(data);
 	}
 

@@ -87,6 +87,10 @@ public class Room {
 		this.id_Hopital = id;
 	}
 	
+	public String toString() {
+		return(id_Room+",'"+type+"','"+etat+"',"+id_Sejour+","+id_Hopital);
+	}
+	
 	public String toStringNoid() {
 		return("'"+type+"','"+etat+"',"+id_Hopital);
 	}

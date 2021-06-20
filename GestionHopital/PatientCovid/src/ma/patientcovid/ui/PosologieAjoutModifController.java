@@ -27,29 +27,6 @@ import ma.patientcovid.patient.Symptome;
 import ma.patientcovid.patient.Traitement;
 
 public class PosologieAjoutModifController implements Initializable{
-	@FXML
-	TableView<Medicament>	medocTable1;
-	
-	@FXML
-	TableColumn Id1;
-	
-	@FXML
-	TableColumn Desc1;
-	
-	@FXML
-	TableView<Medicament> medocTable2;
-	
-	@FXML
-	TableColumn Id2;
-	
-	@FXML
-	TableColumn Desc2;
-	
-	@FXML
-	Button move;
-	
-	@FXML
-	Button remove;
 	
 	@FXML
 	ChoiceBox diagId;
@@ -57,14 +34,6 @@ public class PosologieAjoutModifController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		medocTable1.getItems().clear();
-		Set<Medicament> data = DAOFactory.getMedicamentDAO().all();
-		Id1.setCellValueFactory(new PropertyValueFactory("id"));
-		Desc1.setCellValueFactory(new PropertyValueFactory("desc"));
-		Id2.setCellValueFactory(new PropertyValueFactory("id"));
-		Desc2.setCellValueFactory(new PropertyValueFactory("desc"));
-		medocTable1.getItems().addAll(data);
-		medocTable1.sort();
 		Set<Diagnostic> set = DAOFactory.getDiagnosticDAO().all();
 		List<String> list = new ArrayList<String>();
 		for (Diagnostic d : set) {
@@ -72,20 +41,6 @@ public class PosologieAjoutModifController implements Initializable{
 		}
 		ObservableList obList = FXCollections.observableList(list);
 		diagId.setItems(obList);
-	}
-	
-	@FXML
-	public void moving() {
-		Medicament s = medocTable1.getSelectionModel().getSelectedItem();
-		medocTable2.getItems().add(s);
-		medocTable1.getItems().remove(s);
-	}
-	
-	@FXML
-	public void removing() {
-		Medicament s = medocTable2.getSelectionModel().getSelectedItem();
-		medocTable1.getItems().add(s);
-		medocTable2.getItems().remove(s);
 	}
 	
 	@FXML
@@ -109,13 +64,6 @@ public class PosologieAjoutModifController implements Initializable{
  		int idD = Integer.parseInt((String)diagId.getValue());
  		Posologie p = new Posologie(DateDeb,DateFin,nbP,idD);
  		DAOFactory.getPosologieDAO().create(p);
- 		int idPo = DAOFactory.getPosologieDAO().find(p).getId();
- 		System.out.println(idPo);
- 		for (Medicament m : medocTable2.getItems()) {
-			Traitement t = new Traitement(m.getId(),idPo);
-			System.out.println(t);
-			DAOFactory.getTraitementDAO().create(t);
-		}
 	}
 	
 	@FXML
@@ -129,28 +77,16 @@ public class PosologieAjoutModifController implements Initializable{
  		int id = Integer.parseInt(idPosText);
  		Posologie p = new Posologie(id,DateDeb,DateFin,nbP,idD);
  		DAOFactory.getPosologieDAO().update(p,p);
- 		for (Medicament m : medocTable2.getItems()) {
-			Traitement t = new Traitement(m.getId(),id);
-			DAOFactory.getTraitementDAO().create(t);
-		}
 	}
 	
 	@FXML
 	private void clearModif(){
-		for (Medicament s : medocTable2.getSelectionModel().getSelectedItems()) {
-			medocTable1.getItems().add(s);
-			medocTable2.getItems().remove(s);
-		}
 		idPos.clear();
 		NbPrise.clear();
 	}
 	
 	@FXML
 	private void clearAjout(){
-		for (Medicament s : medocTable2.getSelectionModel().getSelectedItems()) {
-			medocTable1.getItems().add(s);
-			medocTable2.getItems().remove(s);
-		}
 		NbPrise.clear();
 	}
 }

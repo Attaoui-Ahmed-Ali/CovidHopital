@@ -32,6 +32,25 @@ public class RoomDAO extends DAO<Room> {
 		return false;
 	}
 
+	public boolean createid(Room obj) {
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			int result = stmt.executeUpdate("INSERT INTO Room VALUES(" + obj.toString() + ")");
+			System.out.println(result + " Row affected ! ");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
 	public boolean delete(Room obj) {
 		Statement stmt = null;
 		try {
@@ -54,7 +73,18 @@ public class RoomDAO extends DAO<Room> {
 	public boolean update(Room oldobj, Room newobj) {
 		try {
 			delete(oldobj);
-			create(newobj);
+			createid(newobj);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public boolean updateid(Room oldobj, Room newobj) {
+		try {
+			delete(oldobj);
+			createid(newobj);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,6 +98,7 @@ public class RoomDAO extends DAO<Room> {
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			ResultSet result = stmt.executeQuery("SELECT * FROM Room WHERE id_Room  = " + obj.getId());
+			result.next();
 			room = new Room(result.getInt(1), result.getString(2),
 					result.getString(3), result.getInt(4), result.getInt(5));
 			result.close();
@@ -83,6 +114,28 @@ public class RoomDAO extends DAO<Room> {
 		return room;
 	}
 
+	public Room findSej(int id) {
+		Room room = new Room();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Room WHERE id_Sejour  = " + id);
+			result.next();
+			room = new Room(result.getInt(1), result.getString(2),
+					result.getString(3), result.getInt(4), result.getInt(5));
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return room;
+	}
+	
 	public Set<Room> all() {
 		Set<Room> set_Room = new HashSet<>();
 		Statement stmt = null;

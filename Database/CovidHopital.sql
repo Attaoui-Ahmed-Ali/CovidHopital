@@ -74,9 +74,8 @@ CREATE TABLE Room(
 	id_Room int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	type varchar(255),
 	etat varchar(1),
-	id_Sejour int NOT NULL,
+	id_Sejour int,
 	id_Hopital int NOT NULL,
-	FOREIGN KEY (id_Sejour) REFERENCES SejourHospitalier(id_Sejour),
 	FOREIGN KEY (id_Hopital) REFERENCES Hopital(id_Hopital)
 	);
 

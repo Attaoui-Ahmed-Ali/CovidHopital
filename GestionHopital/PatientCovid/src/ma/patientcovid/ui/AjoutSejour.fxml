@@ -28,5 +28,6 @@
          </content>
       </ScrollPane>
       <Button layoutX="514.0" layoutY="329.0" mnemonicParsing="false" onAction="#loadRooms" text="Load Rooms" />
+      <Button layoutX="325.0" layoutY="329.0" mnemonicParsing="false" onAction="#confirmAjout" text="Confirmation" />
    </children>
 </Pane>

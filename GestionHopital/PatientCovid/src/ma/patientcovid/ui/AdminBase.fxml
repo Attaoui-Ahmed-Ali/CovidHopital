@@ -86,6 +86,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#showStatRoom" text="Statistique" />
               </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Maladie">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#showListMaladie" text="Affichage" />
+              </items>
+            </Menu>
          </menus>
       </MenuBar>
    </top>

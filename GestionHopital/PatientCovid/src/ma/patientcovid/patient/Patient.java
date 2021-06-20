@@ -113,7 +113,7 @@ public class Patient {
 	}
 	
 	public String toString() {
-		return(id+"'"+CIN+"','"+DN+"','"+Nom+"','"+Prenom+"','"+Tel+"','"+Adresse+"','"+sexe+"'");
+		return(id+",'"+CIN+"','"+DN+"','"+Nom+"','"+Prenom+"','"+Tel+"','"+Adresse+"','"+sexe+"'");
 	}
 	
 	public String toStringNoid() {

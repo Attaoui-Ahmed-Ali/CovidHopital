@@ -31,6 +31,25 @@ public class PatientDAO extends DAO<Patient> {
 		}
 		return false;
 	}
+	
+	public boolean createid(Patient obj) {
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			int result = stmt.executeUpdate("INSERT INTO Patient VALUES(" + obj.toString() + ")");
+			System.out.println(result + " Row affected ! ");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
 
 	public boolean delete(Patient obj) {
 		Statement stmt = null;
@@ -54,7 +73,7 @@ public class PatientDAO extends DAO<Patient> {
 	public boolean update(Patient oldobj, Patient newobj) {
 		try {
 			delete(oldobj);
-			create(newobj);
+			createid(newobj);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

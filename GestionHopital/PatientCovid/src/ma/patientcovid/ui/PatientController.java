@@ -3,6 +3,8 @@ package ma.patientcovid.ui;
 import java.time.LocalDate;
 import java.util.Set;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -17,31 +19,31 @@ import ma.patientcovid.patient.Patient;
 public class PatientController {
 
 	@FXML
-	TableView patientTable;
+	TableView<Patient> patientTable;
 	
 	@FXML
-	TableColumn patientId;
+	TableColumn<Patient,Integer> patientId;
 	
 	@FXML
-	TableColumn patientCIN;
+	TableColumn<Patient,String> patientCIN;
 	
 	@FXML
-	TableColumn patientNom;
+	TableColumn<Patient,String> patientNom;
 	
 	@FXML
-	TableColumn patientPrenom;
+	TableColumn<Patient,String> patientPrenom;
 	
 	@FXML
-	TableColumn patientSexe;
+	TableColumn<Patient,String> patientSexe;
 	
 	@FXML
-	TableColumn patientDN;
+	TableColumn<Patient,LocalDate> patientDN;
 	
 	@FXML
-	TableColumn patientTel;
+	TableColumn<Patient,String> patientTel;
 	
 	@FXML
-	TableColumn patientAdress;
+	TableColumn<Patient,String> patientAdress;
 	
 	@FXML
 	Button patientLoad;
@@ -50,14 +52,22 @@ public class PatientController {
 	private void loadPatientData() {
 		patientTable.getItems().clear();
 		Set<Patient> data = DAOFactory.getPatientDAO().all();
-		patientId.setCellValueFactory(new PropertyValueFactory("id"));
-		patientCIN.setCellValueFactory(new PropertyValueFactory("nom"));
-		patientNom.setCellValueFactory(new PropertyValueFactory("nomv"));
-		patientPrenom.setCellValueFactory(new PropertyValueFactory("id"));
-		patientSexe.setCellValueFactory(new PropertyValueFactory("nom"));
-		patientDN.setCellValueFactory(new PropertyValueFactory("nomv"));
-		patientTel.setCellValueFactory(new PropertyValueFactory("nom"));
-		patientAdress.setCellValueFactory(new PropertyValueFactory("nomv"));
+		patientId.setCellValueFactory(
+				cellData -> new SimpleIntegerProperty(cellData.getValue().getId()).asObject());
+		patientCIN.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getCIN()));
+		patientNom.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getNom()));
+		patientPrenom.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getPrenom()));
+		patientSexe.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getSexe()));
+		patientDN.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<LocalDate>(cellData.getValue().getDN()));
+		patientTel.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getTel()));
+		patientAdress.setCellValueFactory(
+				cellData -> new SimpleObjectProperty<String>(cellData.getValue().getAdresse()));
 		patientTable.getItems().addAll(data);
 	}
 

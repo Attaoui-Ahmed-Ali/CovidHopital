@@ -413,7 +413,7 @@ public class BaseController {
 	@FXML
 	private void showDeleteSejour() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppSejour.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SuppSéjour.fxml"));
 			Pane newPane = loader.load();
 			primaryLayout.setCenter(newPane);
 		} catch (Exception e) {
@@ -427,7 +427,7 @@ public class BaseController {
 	@FXML
 	private void showStatSejour() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("StatSejour.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("StatSéjour.fxml"));
 			Pane newPane = loader.load();
 			primaryLayout.setCenter(newPane);
 		} catch (Exception e) {
@@ -695,6 +695,17 @@ public class BaseController {
 	private void showStatRoom() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("StatRoom.fxml"));
+			Pane newPane = loader.load();
+			primaryLayout.setCenter(newPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	private void showListMaladie() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichMaladie.fxml"));
 			Pane newPane = loader.load();
 			primaryLayout.setCenter(newPane);
 		} catch (Exception e) {

@@ -14,6 +14,16 @@ public class SejourHopitalier {
 		this.finSejour = fin;
 		this.id_Diagnostic = idDiag;
 	}
+	
+	public SejourHopitalier(int id) {
+		this.id_Sejour = id;
+	}
+	
+	public SejourHopitalier(LocalDate debut, LocalDate fin, int idDiag) {
+		this.debutSejour = debut;
+		this.finSejour = fin;
+		this.id_Diagnostic = idDiag;
+	}
 
 	public SejourHopitalier() {
 		this.id_Sejour = -1;
@@ -52,5 +62,9 @@ public class SejourHopitalier {
 
 	public void setIdDiag(int id) {
 		this.id_Diagnostic = id;
+	}
+	
+	public String toString() {
+		return (id_Sejour+",'"+debutSejour+"','"+finSejour+"',"+id_Diagnostic);
 	}
 }
